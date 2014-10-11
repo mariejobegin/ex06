@@ -1,14 +1,12 @@
 import 'package:ex06/fcns.dart';
 
 ex6_1() {
-  
   print('Ex. 6.1');
   List<String> palindromes = ["Kayak", "Hello World", "Engage le jeu que je le gagne"];
   String resultat;
 
   Iterator<String> i = palindromes.iterator;
   while (i.moveNext()) {
-    
       resultat = "'" + i.current + "'";
       
       if (estPalindrome(i.current))
@@ -16,15 +14,12 @@ ex6_1() {
       else
         resultat += " n'est pas ";
   
-      print(resultat + "un palindrome.");
-      
+      print(resultat + "un palindrome.");      
   }
   print('');
-  
 }
 
 ex6_2() {
-  
   print('Ex. 6.2');
   DateTime date1 = new DateTime(2014,1,1);
   DateTime date2 = new DateTime(2013,1,1);
@@ -35,7 +30,6 @@ ex6_2() {
 }
 
 ex6_3() {
-  
   print('Ex. 6.3');
   
   List<double> notes = [95.0, 65.5, 25.0, 82.0];
@@ -50,7 +44,6 @@ ex6_3() {
 }
 
 ex6_4() {
-  
   List<String> noms = ['Marie-Jo','Dzenan', 'Robert', 'Sébastien','Julie', 'Marc', 'Valentin', 'Jean-Philippe'];
   List<List> nomsSeparer;
   Iterator<String> i;
@@ -78,11 +71,9 @@ ex6_4() {
   }
   
   print('');
-  
 }
 
 ex6_5() {
-  
   Map nomJoueurs =
     {'Patrice Bergeron' : 'Bruins',
      'Jeff Carter' : 'Kings',

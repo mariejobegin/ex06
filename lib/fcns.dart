@@ -1,23 +1,20 @@
 library fcns;
 
 // Question 1
-bool estPalindrome(String phrase){
-  
+bool estPalindrome(String phrase) { 
   String phraseInverse;
   
   phrase = phrase.replaceAll(" ", "").toUpperCase();
   phraseInverse = phrase.split("").reversed.join();
   
-  return (phrase == phraseInverse);
-  
+  return (phrase == phraseInverse); 
 }
 
 // Question 2
 int nombreJours(DateTime date1, DateTime date2) => date1.difference(date2).inDays;
 
 // Question 3
-String obtenirCote(double note){
-  
+String obtenirCote(double note) {  
   String cote;
   Iterator<double> notesBareme;
   Map bareme =
@@ -37,8 +34,7 @@ String obtenirCote(double note){
   notesBareme = bareme.keys.iterator;
   cote = '';
   
-  while (notesBareme.moveNext() && cote == '' ) {
-    
+  while (notesBareme.moveNext() && cote == '' ) {   
     if (note >= notesBareme.current)
       cote = bareme[notesBareme.current];
   }
@@ -47,8 +43,7 @@ String obtenirCote(double note){
 }
 
 // Question 4
-List<List> sepererNoms(List<String> noms){
-  
+List<List> sepererNoms(List<String> noms) {
   List<List> listeNoms;
   List<String> nomsCourt, nomsMoyen, nomsLong;
   
@@ -57,12 +52,10 @@ List<List> sepererNoms(List<String> noms){
   nomsLong = new List<String>();
   
   Iterator<String> i = noms.iterator;
-  while (i.moveNext()) {
-    
+  while (i.moveNext()) {   
     if (i.current.length < 8) nomsCourt.add(i.current);
     else if (i.current.length == 8) nomsMoyen.add(i.current);
-    else nomsLong.add(i.current);
-      
+    else nomsLong.add(i.current);   
   }
   
   listeNoms = new List<List>();
@@ -74,8 +67,7 @@ List<List> sepererNoms(List<String> noms){
 }
 
 // Question 5
-Map<String, List<String>> creerListeEquipes(Map nomsJoueurs, List<String> equipes){
-  
+Map<String, List<String>> creerListeEquipes(Map nomsJoueurs, List<String> equipes) {
   Map<String, List<String>> listeEquipes = new Map();
   List<String> joueurs;
   Iterator<String> equipe,joueur;
@@ -88,7 +80,6 @@ Map<String, List<String>> creerListeEquipes(Map nomsJoueurs, List<String> equipe
   
   equipe = equipes.iterator;
   while (equipe.moveNext()) {
-    
     joueurs = new List<String>();
     joueur = nomsJoueurs.keys.iterator;
     
@@ -98,11 +89,9 @@ Map<String, List<String>> creerListeEquipes(Map nomsJoueurs, List<String> equipe
         }
     }
     
-    listeEquipes.putIfAbsent(equipe.current, () => joueurs);
-    
+    listeEquipes.putIfAbsent(equipe.current, () => joueurs); 
   }
   
   return listeEquipes;
-  
 }
 
